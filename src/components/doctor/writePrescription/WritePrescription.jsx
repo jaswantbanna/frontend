@@ -16,7 +16,7 @@ const WritePrescription = () => {
 
   const submitData = async (e) => {
     const token = localStorage.getItem('authToken');
-    axios.post("http://localhost:3001/addDetailsToPatient", {bookingId:id, prescription:prescriptionData}, {headers: {'Authorization': `${token}`}})
+    axios.post("https://doctors-backend-itra.onrender.com/addDetailsToPatient", {bookingId:id, prescription:prescriptionData}, {headers: {'Authorization': `${token}`}})
       .then((response) => {
         alert('success')
         navigate('/doctor/bookingnotifications');

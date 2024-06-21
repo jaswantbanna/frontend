@@ -11,7 +11,7 @@ const SliderAndNews = ({ slides }) => {
     useEffect(() => {
         const fetchNewsData = async () => {
             try {
-                const response = await axios.get("http://localhost:3001/latestnews");
+                const response = await axios.get("https://doctors-backend-itra.onrender.com/latestnews");
                 setNewsData(response.data.latestnewsdata);
             } catch (error) {
                 console.error('Error fetching news data:', error);

@@ -12,7 +12,7 @@ const Prescription = () => {
     const fetchData = async () => {
         const token = localStorage.getItem('authToken');
         try {
-            const response = await axios.get(`http://localhost:3001/getAllBookings`, {
+            const response = await axios.get(`https://doctors-backend-itra.onrender.com/getAllBookings`, {
                 headers: { 'Authorization': `${token}` }
             });
             console.log(response.data);

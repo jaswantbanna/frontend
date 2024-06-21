@@ -36,7 +36,7 @@ const DoctorAvailability = () => {
   const submitData = async(e)=> {
     try {
       const token = localStorage.getItem('authToken')
-      const response = await axios.post("http://localhost:3001/submitdoctoravailability",availabilityData,{headers: {'Authorization': `${token}`}});
+      const response = await axios.post("https://doctors-backend-itra.onrender.com/submitdoctoravailability",availabilityData,{headers: {'Authorization': `${token}`}});
       alert("submission successful");
     } catch (error) {
       alert(error);

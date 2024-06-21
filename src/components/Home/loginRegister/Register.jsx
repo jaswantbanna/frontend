@@ -29,7 +29,7 @@ const Register = () => {
     }, [countdown]);
 
     const requestOtp = async (e) => {
-        axios.post("http://localhost:3001/sendotp", { email: registrationData.email })
+        axios.post("https://doctors-backend-itra.onrender.com/sendotp", { email: registrationData.email })
             .then((response) => {
                 setOtpFlag(true);
                 setCountdown(60); // 1 minute countdown
@@ -48,7 +48,7 @@ const Register = () => {
     };
 
     const submitData = async (e) => {
-        axios.post("http://localhost:3001/register", registrationData)
+        axios.post("https://doctors-backend-itra.onrender.com/register", registrationData)
             .then((response) => {
                 navigate('/login');
             })

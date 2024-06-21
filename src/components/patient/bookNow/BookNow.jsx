@@ -15,7 +15,7 @@ const BookNow = ({ date, id, email }) => {
 
     const getDoctorsDetails = async () => {
         try {
-            const dataset = await axios.get(`http://localhost:3001/getdoctoravailability`, { params: { id: id } });
+            const dataset = await axios.get(`https://doctors-backend-itra.onrender.com/getdoctoravailability`, { params: { id: id } });
             setAvailability(dataset.data);
         } catch (error) {
             alert("Error fetching doctor details");
@@ -24,7 +24,7 @@ const BookNow = ({ date, id, email }) => {
 
     const getAlreadyBookedData = async () => {
         try {
-            const dataset = await axios.get(`http://localhost:3001/getalreadybookedslots`, { params: { id: id } });
+            const dataset = await axios.get(`https://doctors-backend-itra.onrender.com/getalreadybookedslots`, { params: { id: id } });
             console.log(dataset);
             setAlreadyBookedSlots(dataset.data.data);
         } catch (error) {
@@ -74,7 +74,7 @@ const BookNow = ({ date, id, email }) => {
         //console.log(bookingData);
         try {
             const token = localStorage.getItem('authToken');
-            await axios.post(`http://localhost:3001/submitbookings`, bookingData, { headers: { 'Authorization': `${token}` } });
+            await axios.post(`https://doctors-backend-itra.onrender.com/submitbookings`, bookingData, { headers: { 'Authorization': `${token}` } });
         } catch (error) {
             alert(error);
         }

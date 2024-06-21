@@ -9,7 +9,7 @@ const DoctorDetails = () => {
     const getUserData = async (e) => {
         try {
             const token = localStorage.getItem('authToken');
-            const details = await axios.get(`http://localhost:3001/getuserdetails`,{headers: {'Authorization': `${token}`}});
+            const details = await axios.get(`https://doctors-backend-itra.onrender.com/getuserdetails`,{headers: {'Authorization': `${token}`}});
             console.log("hello")
             console.log(details.data.userData);
             // console.log(id);
@@ -23,7 +23,7 @@ const DoctorDetails = () => {
     }, [])
     return (
         <div className='doctordetails'>
-            <div className='doctorimage'><img className='doctorprofileimage' src={`http://localhost:3001/`+doctorDetails.profile_image} alt='doctor'></img></div>
+            <div className='doctorimage'><img className='doctorprofileimage' src={`https://doctors-backend-itra.onrender.com/`+doctorDetails.profile_image} alt='doctor'></img></div>
             <div className='doctordata'>
                 <div className='doctordataleft'>
                     <div className='doctorlabel'>Name: <p className='doctorlabelp'>{doctorDetails.name}</p> </div>

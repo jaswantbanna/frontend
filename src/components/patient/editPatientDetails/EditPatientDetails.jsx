@@ -15,7 +15,7 @@ const EditPatientDetails = () => {
     const getUserData = async (e) => {
         try {
             const token = localStorage.getItem("authToken")
-            const details = await axios.get(`http://localhost:3001/getuserdetails`, {
+            const details = await axios.get(`https://doctors-backend-itra.onrender.com/getuserdetails`, {
                 headers: {
                     'Authorization': `${token}`
                 }
@@ -47,7 +47,7 @@ const EditPatientDetails = () => {
                 profileData.append(key, patientDetails[key]);
             }
             const token = localStorage.getItem('authToken');
-            const response = await axios.patch(`http://localhost:3001/updateuserdetails`, profileData, {
+            const response = await axios.patch(`https://doctors-backend-itra.onrender.com/updateuserdetails`, profileData, {
                 headers: {
                     'Authorization': `${token}`
                 }
@@ -60,7 +60,7 @@ const EditPatientDetails = () => {
 
     return (
         <div className='editpatientdetails'>
-            <div className='editpatientimage'><img className='editpatientprofileimage' src={`http://localhost:3001/` + patientDetails.profile_image} alt='patient'></img></div>
+            <div className='editpatientimage'><img className='editpatientprofileimage' src={`https://doctors-backend-itra.onrender.com/` + patientDetails.profile_image} alt='patient'></img></div>
             <input className='patientlabelinputprofile' type="file" accept=".jpg, .jpeg, .png" onChange={onChangeImage} />
             <div className='editpatientdata'>
                 <div className='editpatientdataleft'>
